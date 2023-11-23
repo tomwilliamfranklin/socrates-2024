@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-ExtraLight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Light.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --primary: #061425;
+  --accent: #f4d35e;
+  --accent2: #ef4444;
+  --accent3: #0ea5e9;
+  --accent4: #11db76;
+  --secondary: #303a44;
+
+  --highlight: #e80000;
+  --whiteColor: #f7f7ff;
+  --blackColor: #000814;
+  --greyColor: #c5c5c5;
+  --transparent: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #061425;
+    --accent: #f4d35e;
+    --accent2: #ef4444;
+    --accent3: #0ea5e9;
+    --accent4: #11db76;
+    --accent5: #c711db;
+    --secondary: #2b3036;
+
+    --highlight: #e80000;
+    --whiteColor: #f7f7ff;
+    --blackColor: #000814;
+    --greyColor: #c5c5c5;
+    --transparent: transparent;
+  }
+}
+
+@layer components {
+  body {
+    @apply font-poppins text-whiteColor;
+  }
+
+  h1 {
+    word-break: break-all;
+    @apply text-4xl sm:text-4xl md:text-5xl lg:text-7xl lg:leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply text-lg;
+  }
+
+  label {
+    @apply text-xl font-bold;
+  }
+
+  button {
+    @apply text-lg md:text-xl;
+  }
+
+  .bggrid {
+    background-color: #131313;
+    background-image: linear-gradient(
+        90deg,
+        hsla(0, 0%, 100%, 0.15) 1px,
+        transparent 0
+      ),
+      linear-gradient(180deg, hsla(0, 0%, 100%, 0.15) 1px, transparent 0);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: 50vw 50vw;
+    background-size: 20vw 20vw;
+
+    transition-property: color, background-color, border-color, fill, stroke,
+      -webkit-text-decoration-color;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.3s;
+  }
+}
