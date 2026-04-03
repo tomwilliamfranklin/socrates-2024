@@ -1,0 +1,61 @@
+.ImageBanner {
+  &_root {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+    overflow: hidden;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      text-align: center;
+      max-width: 1000px;
+      text-transform: capitalize;
+    }
+    &.alt {
+      background-color: #f9f9f9;
+    }
+    &.alt2 {
+      background-color: var(--accent);
+    }
+  }
+  &_text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+  }
+  &_image {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 3px,
+        rgba(0, 0, 0, 0.05) 3px,
+        rgba(0, 0, 0, 0.05) 6px
+      ),
+      linear-gradient(to bottom, #24557e, #102a3f);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(0.7);
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .ImageBanner {
+    &_text {
+      &.alignRight {
+        left: 0;
+      }
+    }
+  }
+}

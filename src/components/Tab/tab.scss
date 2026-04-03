@@ -1,0 +1,102 @@
+@import "../../index.scss";
+
+.Tab {
+  &_root {
+    color: var(--blackColor);
+    height: 50px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px;
+
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: normal;
+    margin-right: 5px;
+
+    transition-property: filter, transform, box-shadow, border, background-color;
+    transition-duration: 0.1s;
+    margin-bottom: 30px;
+    border-bottom: 2px solid transparent;
+
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #e8e3d8b3;
+    color: var(--blackColor);
+
+    &:hover {
+      color: var(--accent);
+    }
+    &.scrolled {
+      color: var(--secondaryAccent);
+      &:hover {
+        color: var(--accent);
+      }
+      &.special {
+        color: var(--blackColor);
+      }
+    }
+    &.alt {
+      color: var(--secondaryAccent);
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 30px;
+      &:hover {
+        background-color: transparent;
+        border-bottom: 2px solid transparent;
+        color: var(--accent);
+      }
+    }
+    &.special {
+      background-color: var(--accent);
+      border-radius: 5px;
+      margin-left: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &:hover {
+        background-color: var(--accent);
+        color: var(--blackColor);
+      }
+    }
+    &.noMargin {
+      margin: 0;
+    }
+  }
+
+  &_text {
+    position: relative;
+    &::before {
+      width: 1rem;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    &.alt {
+      color: var(--secondaryAccentDark);
+      font-family: "Open Sans Bold", sans-serif;
+    }
+  }
+
+  &_nav {
+    &.showMenu {
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+a.isActive > .Tab {
+  &_root {
+    color: var(--accent);
+    &.showMenu {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}

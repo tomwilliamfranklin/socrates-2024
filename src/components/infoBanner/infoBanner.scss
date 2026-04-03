@@ -1,0 +1,106 @@
+.InfoBanner {
+  &_root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      max-width: 1000px;
+      width: 100%;
+    }
+    &.alt {
+      background-color: #f9f9f9;
+    }
+    &.alt2 {
+      background-color: var(--accent);
+      color: #ffff;
+    }
+    &.alignCenter {
+      text-align: center;
+    }
+  }
+
+  &_text {
+    max-width: 400px;
+    background-color: #f9f9f9;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 3rem;
+
+    &.right {
+      left: unset;
+      right: -50%;
+    }
+  }
+
+  &_image {
+    display: block;
+    width: 750px;
+    object-fit: cover;
+    height: 500px;
+    margin-left: 250px;
+    &.right {
+      margin-left: -250px;
+    }
+  }
+
+  &_content {
+    position: relative;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: solid transparent 200px;
+    border-right: solid transparent 200px;
+    &.topRow {
+      margin-top: 100px;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .InfoBanner {
+    &_content {
+      border-left: 0;
+      border-right: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      &.topRow {
+        margin-top: 0;
+      }
+    }
+    &_text {
+      background-color: #ffff;
+      position: relative;
+      transform: unset;
+      top: 0;
+      &.right {
+        right: unset;
+      }
+    }
+    &_image {
+      margin-top: 40px;
+      width: 100%;
+      margin-left: 0;
+      &.right {
+        margin-left: 0;
+      }
+    }
+  }
+}

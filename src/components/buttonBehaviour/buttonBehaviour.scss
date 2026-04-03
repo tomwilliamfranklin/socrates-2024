@@ -1,0 +1,17 @@
+.ButtonBehaviour {
+  &_root {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  &_icon {
+    filter: brightness(0) invert(1);
+    height: 30px;
+    width: 30px;
+    &.smallIcon {
+      height: 15px;
+      width: 15px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.PillarInfo {
+  &_root {
+    background: linear-gradient(
+      to bottom,
+      var(--whiteColor) 0%,
+      var(--secondAccent) 100%
+    );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 170px;
+    padding-top: 400px;
+  }
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  &_pillar {
+    animation-timing-function: ease-in-out !important;
+    display: flex !important;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-width: 20px;
+    border-radius: 5px;
+    border-color: var(--whiteColor-dark);
+    background: repeating-linear-gradient(
+        45deg,
+        hsla(0, 0%, 100%, 0.05),
+        hsla(0, 0%, 100%, 0.05) 3px,
+        rgba(0, 0, 0, 0.05) 0,
+        rgba(0, 0, 0, 0.05) 6px
+      ),
+      linear-gradient(180deg, var(--whiteColor), var(--whiteColor-dark));
+    opacity: 0;
+    & > div {
+      width: 100%;
+      text-align: left;
+    }
+    & > img {
+      width: 50%;
+      border: 3px solid var(--secondaryAccent);
+      border-radius: 25%;
+      padding: 25px;
+    }
+    & > h5 {
+      margin-top: 30px;
+    }
+    & > p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .PillarInfo {
+    &_pillar {
+      opacity: 0;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &_content {
+      flex-direction: column;
+    }
+  }
+}

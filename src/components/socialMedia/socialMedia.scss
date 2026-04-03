@@ -1,0 +1,38 @@
+.SocialMedia {
+  &_root {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &_button {
+    color: #ffffff;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--secondaryAccent);
+    border: 0px solid transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+
+    transition-property: filter, transform, box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0s;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+
+    &:hover {
+      filter: brightness(1.4);
+    }
+
+    &.smallIcon {
+      height: 30px;
+      width: 30px;
+      padding: 5px;
+    }
+  }
+}

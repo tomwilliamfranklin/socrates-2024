@@ -1,3 +1,5 @@
+@import "Animations.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,46 +33,51 @@
 }
 
 :root {
-  --primary: #061425;
-  --accent: #f4d35e;
-  --accent2: #ef4444;
-  --accent3: #0ea5e9;
-  --accent4: #11db76;
-  --secondary: #303a44;
+  --text: #d6d3ce;
+  --accent: #e8a030;
+  --secondAccent: #5d7a95;
+  --background: #292827;
+  --bulletpoint-orange: #ff6d00;
+  --bulletpoint-red: #ff373c;
+  --bulletpoint-pink: #d22d74;
+  --bulletpoint-blue: #2b79e5;
+  --bulletpoint-green: #028c37;
 
-  --highlight: #e80000;
-  --whiteColor: #f7f7ff;
-  --blackColor: #000814;
-  --greyColor: #c5c5c5;
+  --whiteColor: #f0eeeb;
+  --whiteColor-dark: #e7e5e1;
+  --blackColor: #1b1c1e;
   --transparent: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #061425;
-    --accent: #f4d35e;
-    --accent2: #ef4444;
-    --accent3: #0ea5e9;
-    --accent4: #11db76;
-    --accent5: #c711db;
-    --secondary: #2b3036;
+    --text: #25272a;
+    --accent: #e8a030;
+    --secondAccent: #5d7a95;
+    --background: #fafafa;
+    --bulletpoint-orange: #ff6d00;
+    --bulletpoint-red: #ff373c;
+    --bulletpoint-pink: #d22d74;
+    --bulletpoint-blue: #2b79e5;
+    --bulletpoint-green: #028c37;
 
-    --highlight: #e80000;
-    --whiteColor: #f7f7ff;
-    --blackColor: #000814;
-    --greyColor: #c5c5c5;
+    --whiteColor: #fafafa;
+    --whiteColor-dark: #e7e5e1;
+    --blackColor: #25272a;
     --transparent: transparent;
   }
 }
-
+::selection {
+  background: var(--accent);
+}
 @layer components {
   body {
-    @apply font-poppins text-whiteColor;
+    @apply font-inter font-black text-blackColor bg-whiteColor;
   }
 
   h1 {
     word-break: break-all;
-    @apply text-4xl sm:text-4xl md:text-5xl lg:text-7xl lg:leading-tight;
+    @apply sm:text-4xl md:text-5xl lg:text-7xl lg:leading-tight;
   }
 
   h2 {
@@ -86,7 +93,7 @@
   }
 
   p {
-    @apply text-lg;
+    @apply text-2xl font-normal;
   }
 
   label {
@@ -97,26 +104,41 @@
     @apply text-lg md:text-xl;
   }
 
-  .bggrid {
-    background-color: #131313;
-    background-image: linear-gradient(
-        90deg,
-        hsla(0, 0%, 100%, 0.15) 1px,
-        transparent 0
-      ),
-      linear-gradient(180deg, hsla(0, 0%, 100%, 0.15) 1px, transparent 0);
-    background-repeat: repeat;
-    background-position: 0 0;
-    background-size: 50vw 50vw;
-    background-size: 20vw 20vw;
+  .titillium-web-black {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
 
-    transition-property: color, background-color, border-color, fill, stroke,
-      -webkit-text-decoration-color;
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke;
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke, -webkit-text-decoration-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 0.3s;
+  .inter-web-black {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  .header {
+  }
+
+  .bggrid {
+    --grid-size: 40px; // size of main squares
+    --grid-color: rgba(255, 255, 255, 0.01);
+    --grid-color-bold: rgba(255, 255, 255, 0.04);
+    --bg-color: #0f1117;
+
+    background-color: var(--bg-color);
+
+    background-image:
+      // bold vertical lines
+      linear-gradient(to right, var(--grid-color-bold) 1px, transparent 1px),
+      // bold horizontal lines
+      linear-gradient(to bottom, var(--grid-color-bold) 1px, transparent 1px),
+      // minor vertical lines
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      // minor horizontal lines
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+
+    background-size: calc(var(--grid-size) * 5) calc(var(--grid-size) * 5),
+      calc(var(--grid-size) * 5) calc(var(--grid-size) * 5),
+      var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
   }
 }

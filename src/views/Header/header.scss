@@ -1,0 +1,141 @@
+.Header {
+  &_container {
+    position: sticky;
+    z-index: 1;
+    top: 100px; // for the sticky.
+    margin-top: 70px;
+  }
+  &_root {
+    position: sticky;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    left: 0;
+    z-index: 1; // allow mouse events on the header.
+    height: 0;
+  }
+  &_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    transition: background-color 0.1s linear;
+    width: 100%;
+    &.scrolled {
+      background: radial-gradient(#24557e24 1px, transparent 1px),
+        linear-gradient(to bottom, #ffffff, #f3f3f1);
+    }
+  }
+
+  &_contentInner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    min-width: 1000px;
+  }
+  &_logoContainer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_logo {
+    min-width: 50px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &.hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &_mobile {
+    display: none;
+    justify-content: flex-end;
+    padding-left: 20px;
+  }
+  &_mobileView {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+  }
+  &_mobileMenu {
+    display: flex;
+    flex-direction: column;
+  }
+  &_mobileViewInner {
+    height: 100%;
+    padding-top: 60px;
+    padding-top: 80px;
+  }
+  &_arrowIcon {
+    margin-left: 10px;
+  }
+  &_contactDetailsIcon {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 30px;
+    margin-right: 15px;
+    color: var(--accent);
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .Header {
+    &_root {
+      position: relative;
+      height: unset;
+      top: 0;
+    }
+    &_content {
+      min-width: 0px;
+      flex-direction: column;
+    }
+    &_contentInner {
+      height: unset;
+      display: none; //TODO header widget
+    }
+    &_mobile {
+      display: flex;
+      justify-content: space-between;
+      h4 {
+        color: #fff;
+        font-size: 25px;
+      }
+      &.scrolled {
+        h4 {
+          color: var(--secondaryAccentDark);
+        }
+      }
+      &.showMenu {
+        h4 {
+          color: var(--secondaryAccentDark);
+        }
+      }
+    }
+    &_container {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      margin-top: 0;
+    }
+    &_contactDetails {
+      display: none;
+    }
+    &_logo {
+      margin-top: 15px;
+    }
+  }
+}
+
+// Logo sizing
+@media screen and (max-width: 550px) {
+  .Header {
+    &_logo {
+      height: 20px;
+    }
+  }
+}

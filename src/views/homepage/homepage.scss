@@ -1,0 +1,217 @@
+@import "../../index.scss";
+
+.Homepage {
+  &_root {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  &_content {
+    width: 100%;
+    margin-top: 0px;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(240, 238, 235, 0.05) 0px,
+        rgba(240, 238, 235, 0.05) 3px,
+        rgba(232, 160, 48, 0.05) 3px,
+        rgba(232, 160, 48, 0.05) 6px
+      ),
+      linear-gradient(to bottom, var(--secondAccent), var(--secondAccent));
+  }
+  &_altColor {
+    background-color: var(--secondaryAccent);
+  }
+  &_banner {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      text-align: center;
+      max-width: 1000px;
+    }
+    &.alt {
+      background-color: #f9f9f9;
+    }
+    &.alt2 {
+      background-color: var(--accent);
+      color: #ffff;
+    }
+  }
+  &_textRotate {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    height: 65px;
+  }
+  &_innerText {
+    display: inline-block;
+
+    position: relative;
+    white-space: nowrap;
+    top: 5px;
+    left: 0;
+
+    animation: move 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+
+    & > .electrical {
+      color: var(--electrical);
+    }
+
+    & > .automation {
+      color: var(--automation);
+    }
+
+    & > .compliance {
+      color: var(--compliance);
+    }
+  }
+  &_logoContainer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    margin-right: auto;
+  }
+  &_logo {
+    min-width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &.hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  &_service {
+    border: 5px solid black;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    > img {
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    &.electrical {
+      border-color: var(--electrical);
+    }
+    &.compliance {
+      border-color: var(--compliance);
+    }
+    &.automation {
+      border-color: var(--automation);
+    }
+  }
+}
+
+.Homepage_pillar_block {
+  width: 100px;
+  height: 7.5px;
+  margin-bottom: -20px;
+  &.electrical {
+    background-color: var(--electrical);
+  }
+  &.compliance {
+    background-color: var(--compliance);
+  }
+  &.automation {
+    background-color: var(--automation);
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .Homepage {
+    &_title {
+      position: absolute;
+
+      top: 0;
+      width: inherit;
+      height: 100%;
+      color: #ffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      overflow: hidden;
+      * {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+    &_descripton {
+      display: none;
+    }
+    &_titleButton {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      margin-left: 0px;
+      margin-top: 10px;
+      margin-right: 0;
+      justify-content: center;
+    }
+    &_textRotate {
+      padding-left: 0;
+    }
+    &_innerText {
+      padding-left: 0;
+    }
+    &_logoContainer {
+      padding: 0;
+    }
+    &_logo {
+      padding: 0;
+    }
+  }
+}
+
+// Logo sizing
+@media screen and (max-width: 550px) {
+  .Homepage {
+    &_logoContainer {
+      transform: scale(1);
+      padding: 0;
+    }
+    &_logo {
+      height: 25px;
+      padding: 0;
+    }
+    &_title {
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    top: 5px;
+  }
+  33% {
+    top: -70px;
+  }
+  66% {
+    top: -150px;
+  }
+  99% {
+    top: 5px;
+  }
+}

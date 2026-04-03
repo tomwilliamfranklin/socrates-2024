@@ -4,25 +4,25 @@ module.exports = {
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
+      titillium: ["'Titillium Web'"],
+      sans: ["Inter", "ui-sans-serif", "system-ui"],
+      inter: ["Inter", "sans-serif"],
     },
     colors: {
-      primary: "#061425",
-      secondary: "#2B3036",
-      accent: "#f4d35e",
-      accent1: "#f4d45e",
-      accent2: "#ef4444",
-      accent3: "#0ea5e9",
-      accent4: "#11DB76",
-      accent5: "#c711db",
-
-      primaryDark: "#191919",
-      highlight: "#e80000",
-      whiteColor: "rgba(231, 231, 231, 1)",
-      whiteColorTran: "rgba(231, 231, 231, 0.9)",
-      blackColor: "#000814",
-      greyColor: "#535353",
-      transparent: "transparent",
-      boxShadow: "rgba(0,0,0,0.4)",
+      text: "var(--text)",
+      accent: "var(--accent)",
+      secondAccent: "var(--secondAccent)",
+      background: "var(--background)",
+      "bulletpoint-orange": "var(--bulletpoint-orange)",
+      "bulletpoint-red": "var(--bulletpoint-red)",
+      "bulletpoint-pink": "var(--bulletpoint-pink)",
+      "bulletpoint-green": "var(--bulletpoint-green)",
+      "bulletpoint-blue": "var(--bulletpoint-blue)",
+      whiteColor: "var(--whiteColor)",
+      whiteColorDark: "var(--whiteColor-dark)",
+      whiteColorTrans: "rgba(240, 245, 247,0.9)", //used sparingly for backgrounds
+      blackColor: "var(--blackColor)",
+      transparent: "var(--transparent)",
     },
     screens: {
       xxxs: "450px", // Iphone SE...

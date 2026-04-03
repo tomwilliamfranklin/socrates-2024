@@ -1,0 +1,59 @@
+.YoutubeIFrame {
+  &_root {
+    background-color: var(--secondaryAccent);
+    transition: opacity 1s;
+    position: relative;
+    top: 96px;
+    width: 100vw;
+    height: 1000px;
+    max-height: 100vh;
+    overflow: hidden;
+    max-width: 75%;
+    align-self: center;
+    border-radius: 25px;
+  }
+  &_video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 4s;
+    pointer-events: none;
+    &.playVideo {
+      opacity: 1;
+    }
+    > iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .YoutubeIFrame {
+    &_video {
+      height: 56.25vw;
+    }
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .YoutubeIFrame {
+    &_video {
+      width: 177.78vh;
+    }
+  }
+}
+
+@media screen and (max-width: 1232px) {
+}
+
+@media screen and (max-width: 550px) {
+  .YoutubeIFrame {
+    &_video {
+      transition: opacity 7s;
+    }
+  }
+}

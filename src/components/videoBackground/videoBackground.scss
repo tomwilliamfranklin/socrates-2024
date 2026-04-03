@@ -1,0 +1,40 @@
+.VideoBackground {
+  &_root {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+  &_video {
+    width: inherit;
+    filter: brightness(70%);
+  }
+  &_videoContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .VideoBackground {
+    &_root {
+      min-height: 0;
+    }
+    &_videoContainer {
+      height: 80vh;
+    }
+    &_video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1000;
+      overflow: hidden;
+    }
+  }
+}

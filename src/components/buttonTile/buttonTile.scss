@@ -1,0 +1,76 @@
+.ButtonTile {
+  &_root {
+    color: #ffffff;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--secondaryAccent);
+    border: 0px solid transparent;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+
+    transition-property: filter, transform, box-shadow;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0s;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+
+    &:hover {
+      background-color: var(--secondaryAccentLight);
+      color: #fff;
+    }
+
+    &.small {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 28px;
+      font-size: 0.9rem;
+    }
+
+    &.alt {
+      padding: 10px;
+      background-color: transparent;
+      &:hover {
+        background-color: #fff;
+        color: var(--secondaryAccentDark);
+        > .ButtonBehaviour_icon {
+          filter: brightness(0) invert(0);
+        }
+      }
+      &.scrolled {
+        > .ButtonBehaviour_icon {
+          filter: brightness(0) invert(0);
+        }
+      }
+      &.showMenu {
+        > .ButtonBehaviour_icon {
+          border: 3px solid transparent;
+          filter: brightness(0) invert(0);
+          &:hover {
+            border: 3px solid var(--secondaryAccentDark);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1232px) {
+  .ButtonTile {
+    &_root {
+      font-size: 1rem;
+      margin-right: 20px;
+      &.noMarginRight {
+        margin-right: 0;
+      }
+    }
+  }
+}
