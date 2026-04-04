@@ -12,12 +12,14 @@ import {
   faMapMarker,
 } from "@fortawesome/fontawesome-free-solid";
 import * as CONTACT_DETAILS from "content/site/contactDetails.json";
+import * as CONFIG_DATA from "content/site/config.json";
 
 import { SocialMedia } from "components/socialMedia/socialMedia";
 import { Tab } from "components/Tab/tab";
 import ButtonTile from "components/buttonTile/buttonTile";
 import menuIcon from "../../images/menu.svg";
 import closeIcon from "../../images/close.svg";
+import { createValidImageURL } from "data/Utils";
 
 fontawesome.library.add(faLongArrowAltRight, faPhone, faEnvelope, faMapMarker);
 
@@ -63,7 +65,7 @@ export default function Header() {
   };
 
   const contactDetails = CONTACT_DETAILS;
-
+  const config = CONFIG_DATA;
   return (
     <>
       <div className="Header_topInfo p-2 bg-whiteColorDark text-blackColor pb-12 pt-5">
@@ -110,17 +112,21 @@ export default function Header() {
                 })}
               >
                 <Link className="alt items-center" to="/">
-                  {/* <img
-                    className="Header_logo"
-                    src={createValidImageURL(config.logo)}
-                    alt="Clifton Technologies"
-                  /> */}
-                  <h3>Clifton Technology</h3>
-                  <h5 className="text-secondAccent">
-                    Design <span className="text-blackColor">•</span>{" "}
-                    Development
-                    <span className="text-blackColor">•</span> Testing
-                  </h5>
+                  <div className="flex flex-row">
+                    <img
+                      className="Header_logo"
+                      src={createValidImageURL(config.logo)}
+                      alt="Clifton Technologies"
+                    />
+                    <div>
+                      <h3>Clifton Technology</h3>
+                      <h5 className="text-secondAccent">
+                        Design <span className="text-blackColor">•</span>{" "}
+                        Development
+                        <span className="text-blackColor">•</span> Testing
+                      </h5>
+                    </div>
+                  </div>
                 </Link>
               </div>
               <div className={classNames("Header_menu", { scrolled })}>

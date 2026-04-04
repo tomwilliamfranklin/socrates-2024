@@ -36,13 +36,15 @@
   }
   &_logoContainer {
     height: 50px;
+    width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   &_logo {
-    min-width: 50px;
-    height: 25px;
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
