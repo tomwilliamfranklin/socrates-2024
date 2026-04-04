@@ -1,0 +1,303 @@
+site_url: https://edison-18de75.netlify.app/
+logo_url: https://edison-18de75.netlify.app/static/media/Grove%20Group%20Logo%20AUG22.e64d19b52e52d7ce9450.png
+backend:
+  name: git-gateway
+  branch: main
+# used together with `npx netlify-cms-proxy-server`. https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+local_backend: true
+media_folder: "public/images"
+# Docs: https://www.netlifycms.org/docs/configuration-options/#collections
+collections:
+  - label: "Site settings"
+    name: "site"
+    files:
+      - label: "Config"
+        name: "config"
+        file: "src/content/site/config.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+      - label: "Contact Details"
+        name: "contactDetails"
+        file: "src/content/site/contactDetails.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Phone Number,
+              name: phoneNumber,
+              widget: string,
+              hint: "Phone Number in proper format",
+            }
+          - {
+              label: Address,
+              name: address,
+              widget: string,
+              hint: "This is the address of your company.",
+            }
+          - {
+              label: Email,
+              name: email,
+              widget: string,
+              hint: "This is the email of your company.",
+            }
+          - {
+              label: Founding Date,
+              name: foundingDate,
+              widget: Date,
+              hint: "This is the date your company was first founded.",
+            }
+  - name: "caseStudies"
+    label: "Case Studies"
+    label_singular: "Case Study" # Used in the UI, ie: "New Post"
+    folder: "src/content/caseStudies"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Subtitle",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Pages"
+    name: "aboutPage"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "src/content/site/home.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Site Header,
+              name: siteheader,
+              widget: string,
+              hint: "Header title",
+            }
+          - {
+              label: Header Description,
+              name: headerdescription,
+              widget: string,
+              hint: "This is used as descriptive text for the splash screen.",
+            }
+          - {
+              label: Embed Site Video,
+              name: video,
+              widget: string,
+              hint: "YOU NEED TO PUT /embed/ ON THE LINK. LIKE: https://www.youtube.com/embed/Blsgz-zB-nM. IT WILL NOT WORK OTHERWISE",
+            }
+          - {
+              label: Core Values Header,
+              name: coreValuesHeader,
+              widget: string,
+            }
+          - { label: Quote 1, name: quoteOne, widget: string }
+          - { label: Quote 2, name: quoteTwo, widget: string }
+          - { label: Quote 3, name: quoteThree, widget: string }
+          - { label: Services Header, name: servicesHeader, widget: string }
+          - {
+              label: "Electrical Services Image",
+              name: "electricalServicesImage",
+              widget: "image",
+            }
+          - {
+              label: Electrical Services Header,
+              name: electricalServicesHeader,
+              widget: string,
+            }
+          - {
+              label: Electrical Services Description,
+              name: electricalServicesBody,
+              widget: string,
+            }
+          - {
+              label: "Compliance Services Image",
+              name: "complianceServicesImage",
+              widget: "image",
+            }
+          - {
+              label: Compliance Services Header,
+              name: complianceServicesHeader,
+              widget: string,
+            }
+          - {
+              label: Compliance Services Description,
+              name: complianceServicesBody,
+              widget: string,
+            }
+          - {
+              label: "Automation Services Image",
+              name: "automationServicesImage",
+              widget: "image",
+            }
+          - {
+              label: Automation Services Header,
+              name: automationServicesHeader,
+              widget: string,
+            }
+          - {
+              label: Automation Services Description,
+              name: automationServicesBody,
+              widget: string,
+            }
+      - label: "About Page"
+        name: "about"
+        file: "src/content/pages/about.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+      - label: "Privacy Policy"
+        name: "privacyPolicy"
+        file: "src/content/pages/privacyPolicy.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+      - label: "Services"
+        name: "services"
+        file: "src/content/pages/services.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: true,
+              modes: ["rich_text"],
+            }
+      - label: "Case Studies"
+        name: "caseStudies"
+        file: "src/content/pages/caseStudies.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: true,
+              modes: ["rich_text"],
+            }
+      - label: "Contact Page"
+        name: "contactPage"
+        file: "src/content/pages/contact.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+  - name: "coreValues"
+    label: "Core Values"
+    label_singular: "Core Value" # Used in the UI, ie: "New Post"
+    folder: "src/content/coreValues"
+    create: true
+    fields:
+      - { label: "Cover", name: "cover", widget: "image", required: true }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+  - name: "socialMedias"
+    label: "Social Medias"
+    label_singular: "Social Media" # Used in the UI, ie: "New Post"
+    folder: "src/content/socialMedias"
+    create: true
+    slug: "{{name}}" # Filename
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "icon",
+          name: "icon",
+          widget: "image",
+          required: true,
+          hint: "The icon will be set to color white, do not use complex icons. with primary color as background. ",
+        }
+
+      - { label: "url", name: "url", widget: "string" }
+      - {
+          label: "primaryColor",
+          name: "primaryColor",
+          widget: "string",
+          hint: "needs the primary color of the social media. In a HEX value. ",
+        }
+  - name: "clients"
+    label: "Clients"
+    label_singular: "Client" # Used in the UI, ie: "New Post"
+    folder: "src/content/clients"
+    create: true
+    slug: "{{name}}" # Filename
+    fields:
+      - {
+          label: "Client Image",
+          name: "image",
+          widget: "image",
+          choose_url: true,
+          required: true,
+        }
+      - { label: "Name", name: "title", widget: "string" }

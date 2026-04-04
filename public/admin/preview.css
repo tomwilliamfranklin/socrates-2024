@@ -1,0 +1,127 @@
+.frame-content {
+  margin: 1rem;
+}
+
+.frame-content > div > div + div {
+  margin-top: 0.5rem;
+  border-top: 1px dashed #dfdfe3;
+  padding-top: 0.5rem;
+}
+
+* {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans Light", sans-serif;
+  letter-spacing: 2px;
+  color: var(--secondaryAccentDark);
+  line-height: 25px;
+  overflow-x: hidden !important;
+  letter-spacing: 0pt;
+  --accent: #ffa500;
+  --accentLight: #ffd60a;
+  --secondaryAccentDark: #001d3d;
+  --secondaryAccent: #24557e;
+  --secondaryAccentLight: #003566;
+
+  --electrical: #24557e;
+  --automation: #e73a39;
+  --group: #727272;
+  --compliance: #84c179;
+
+  --grey: ##5f697c;
+  --black: #000814;
+  --whiteColor: #ffffff;
+}
+
+html {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: #eceff5;
+  color: #1c263b;
+}
+
+h1 {
+  font-size: 80px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0;
+  font-family: "Open Sans Bold", sans-serif;
+  line-height: 65px;
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Open Sans Bold", sans-serif;
+}
+
+h3 {
+  font-size: 45px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  font-family: "Open Sans Bold", sans-serif;
+}
+
+h4 {
+  font-size: 37px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Open Sans Medium", sans-serif;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Open Sans Medium", sans-serif;
+}
+
+h6 {
+  font-size: 13px;
+  line-height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Open Sans Medium", sans-serif;
+}
+
+img {
+  width: 500px;
+}
+
+li {
+  position: relative;
+}
+
+li:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
