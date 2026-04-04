@@ -12,11 +12,12 @@ import {
   faMapMarker,
 } from "@fortawesome/fontawesome-free-solid";
 import * as CONTACT_DETAILS from "content/site/contactDetails.json";
-import * as SITE_SETTINGS from "content/site/config.json";
-import { createValidImageURL } from "data/Utils";
+
 import { SocialMedia } from "components/socialMedia/socialMedia";
 import { Tab } from "components/Tab/tab";
 import ButtonTile from "components/buttonTile/buttonTile";
+import menuIcon from "../../images/close.svg";
+import closeIcon from "../../images/close.svg";
 
 fontawesome.library.add(faLongArrowAltRight, faPhone, faEnvelope, faMapMarker);
 
@@ -62,11 +63,10 @@ export default function Header() {
   };
 
   const contactDetails = CONTACT_DETAILS;
-  const config = SITE_SETTINGS;
 
   return (
     <>
-      <div className="p-2 bg-whiteColorDark text-blackColor pb-12 pt-5">
+      <div className="Header_topInfo p-2 bg-whiteColorDark text-blackColor pb-12 pt-5">
         <div className="flex justify-center items-center space-x-6">
           <FontAwesomeIcon
             className="Header_contactDetailsIcon"
@@ -161,14 +161,20 @@ export default function Header() {
               className={classNames("Header_mobile", { scrolled, showMenu })}
             >
               <div className="Header_headerMobile aboveNotch alt">
-                <img
+                {/* <img
                   className="Header_logo"
                   src={createValidImageURL(config.logo)}
                   alt="Clifton Technologies"
-                />
+                /> */}
+                <h3>Clifton Technology</h3>
+                <h5 className="text-secondAccent">
+                  Design <span className="text-blackColor">•</span> Development
+                  <span className="text-blackColor">•</span> Testing
+                </h5>
               </div>
               <ButtonTile
                 modifiers={classNames("alt", { scrolled, showMenu })}
+                icon={showMenu ? closeIcon : menuIcon}
                 onSelect={showMobileMenu}
               />
             </div>

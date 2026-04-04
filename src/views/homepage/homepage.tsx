@@ -12,6 +12,7 @@ import { Tab } from "components/Tab/tab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faLongArrowAltRight } from "@fortawesome/fontawesome-free-solid";
+import { PhasingGrid } from "components/PhasingGrid/phasingGrid";
 
 type State = {
   coreValues: CoreValue[];
@@ -154,7 +155,10 @@ export class Homepage extends React.Component<{}, State> {
               );
             })}
           />
-          <Banner modifiers="alt2 alignCenter marginBottom">
+          <Banner modifiers="alt2 alignCenter marginBottom relative">
+            <div className="w-full h-full absolute opacity-60">
+              <PhasingGrid />
+            </div>
             <div>
               <h1 className="font-normal break-keep text-blackColor">
                 Creating the standard for innovative technologies

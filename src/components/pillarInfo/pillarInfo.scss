@@ -3,7 +3,7 @@
     background: linear-gradient(
       to bottom,
       var(--whiteColor) 0%,
-      var(--secondAccent) 100%
+      var(--whiteColor-dark) 100%
     );
     padding: 20px;
     display: flex;
@@ -31,7 +31,7 @@
     margin-right: 5px;
     border-width: 20px;
     border-radius: 5px;
-    border-color: var(--whiteColor-dark);
+    border-color: #e1ded9;
     background: repeating-linear-gradient(
         45deg,
         hsla(0, 0%, 100%, 0.05),

@@ -1,0 +1,31 @@
+.PrivacyPolicy {
+  &_root {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  &_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    min-height: 400px;
+    text-align: start;
+    > p,
+    h3,
+    h4 {
+      color: var(--black);
+    }
+  }
+}

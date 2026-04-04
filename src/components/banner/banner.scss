@@ -30,8 +30,12 @@
       background-color: #f9f9f9;
     }
     &.alt2 {
-      background: radial-gradient(#52708e 2px, transparent 1px),
-        linear-gradient(to bottom, var(--secondAccent), var(--secondAccent));
+      background: radial-gradient(#1b1c1e17 2px, transparent 1px),
+        linear-gradient(
+          to bottom,
+          var(--whiteColor-dark),
+          var(--whiteColor-dark)
+        );
       background-size: 20px 20px, 100% 100%;
       h1,
       h2,

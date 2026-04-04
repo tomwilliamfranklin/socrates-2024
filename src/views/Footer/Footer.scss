@@ -1,6 +1,6 @@
 .Footer {
   &_root {
-    background-color: #f9f9f9;
+    background-color: var(--whiteColor-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;

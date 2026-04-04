@@ -98,6 +98,9 @@
       height: unset;
       display: none; //TODO header widget
     }
+    &_topInfo {
+      display: none;
+    }
     &_mobile {
       display: flex;
       justify-content: space-between;

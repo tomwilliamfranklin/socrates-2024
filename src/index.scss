@@ -92,6 +92,10 @@
     @apply text-xl md:text-2xl;
   }
 
+  h6 {
+    @apply text-base md:text-base font-light;
+  }
+
   p {
     @apply text-2xl font-normal;
   }

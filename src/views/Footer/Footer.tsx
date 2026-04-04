@@ -18,7 +18,10 @@ class Footer extends React.Component<{}, State> {
     // const config = SITE_SETTINGS;
     return (
       <section className="Footer_root">
-        <a href="http://fplreflib.findlay.co.uk/images/pdf/beeas/beeas-2014-winners.pdf">
+        <a
+          className="w-40"
+          href="http://fplreflib.findlay.co.uk/images/pdf/beeas/beeas-2014-winners.pdf"
+        >
           <img
             className="Footer_blogo"
             src={
