@@ -116,7 +116,7 @@ export default function Header() {
                     <img
                       className="Header_logo"
                       src={createValidImageURL(config.logo)}
-                      alt="Clifton Technologies"
+                      alt="Clifton Technology"
                     />
                     <div>
                       <h3>Clifton Technology</h3>
@@ -167,11 +167,11 @@ export default function Header() {
               className={classNames("Header_mobile", { scrolled, showMenu })}
             >
               <div className="Header_headerMobile aboveNotch alt">
-                {/* <img
+                <img
                   className="Header_logo"
                   src={createValidImageURL(config.logo)}
-                  alt="Clifton Technologies"
-                /> */}
+                  alt="Clifton Technology"
+                />
                 <h3>Clifton Technology</h3>
                 <h5 className="text-secondAccent">
                   Design <span className="text-blackColor">•</span> Development
