@@ -16,7 +16,7 @@ import * as CONTACT_DETAILS from "content/site/contactDetails.json";
 import { SocialMedia } from "components/socialMedia/socialMedia";
 import { Tab } from "components/Tab/tab";
 import ButtonTile from "components/buttonTile/buttonTile";
-import menuIcon from "../../images/close.svg";
+import menuIcon from "../../images/menu.svg";
 import closeIcon from "../../images/close.svg";
 
 fontawesome.library.add(faLongArrowAltRight, faPhone, faEnvelope, faMapMarker);
