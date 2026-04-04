@@ -1,8 +1,6 @@
 import React from "react";
 import "./Footer.scss";
 import * as CONTACT_DETAILS from "content/site/contactDetails.json";
-import * as SITE_SETTINGS from "content/site/config.json";
-import { createValidImageURL } from "data/Utils";
 import { SocialMedia } from "components/socialMedia/socialMedia";
 import { Tab } from "components/Tab/tab";
 
@@ -17,7 +15,7 @@ class Footer extends React.Component<{}, State> {
 
   render() {
     const contactDetails = CONTACT_DETAILS;
-    const config = SITE_SETTINGS;
+    // const config = SITE_SETTINGS;
     return (
       <section className="Footer_root">
         <a href="http://fplreflib.findlay.co.uk/images/pdf/beeas/beeas-2014-winners.pdf">

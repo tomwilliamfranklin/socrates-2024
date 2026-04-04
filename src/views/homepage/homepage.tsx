@@ -2,7 +2,7 @@ import React from "react";
 import "./homepage.scss";
 import parseMD from "parse-md";
 import * as HOME_INFO from "content/site/home.json";
-import * as SITE_SETTINGS from "content/site/config.json";
+// import * as SITE_SETTINGS from "content/site/config.json";
 import classNames from "classnames";
 import { CaseStudy, CoreValue } from "data/DataTypes";
 import YoutubeIFrame from "components/youtubeIframe/youtubeIframe";
@@ -120,7 +120,7 @@ export class Homepage extends React.Component<{}, State> {
 
   render() {
     const homeData = HOME_INFO;
-    const config = SITE_SETTINGS;
+    // const config = SITE_SETTINGS;
 
     if (!this.state || !this.state.caseStudies || !this.state.coreValues)
       return;
