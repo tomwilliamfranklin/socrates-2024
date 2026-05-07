@@ -5,7 +5,6 @@ import * as HOME_INFO from "content/site/home.json";
 // import * as SITE_SETTINGS from "content/site/config.json";
 import classNames from "classnames";
 import { CaseStudy, CoreValue } from "data/DataTypes";
-import YoutubeIFrame from "components/youtubeIframe/youtubeIframe";
 import { PillarInfo } from "components/pillarInfo/pillarInfo";
 import { Banner } from "components/banner/banner";
 import { Tab } from "components/Tab/tab";
@@ -13,7 +12,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faLongArrowAltRight } from "@fortawesome/fontawesome-free-solid";
 import { PhasingGrid } from "components/PhasingGrid/phasingGrid";
-import { createValidImageURL } from "data/Utils";
 
 type State = {
   coreValues: CoreValue[];
@@ -121,7 +119,6 @@ export class Homepage extends React.Component<{}, State> {
   }
 
   render() {
-    const homeData = HOME_INFO;
     // const config = SITE_SETTINGS;
 
     if (!this.state || !this.state.caseStudies || !this.state.coreValues)
