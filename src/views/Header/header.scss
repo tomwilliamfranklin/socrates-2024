@@ -2,8 +2,8 @@
   &_container {
     position: sticky;
     z-index: 1;
-    top: 100px; // for the sticky.
-    margin-top: 70px;
+    top: 50px; // for the sticky.
+    margin-top: 55px;
   }
   &_root {
     position: sticky;
@@ -21,6 +21,9 @@
     justify-content: center;
     flex-direction: row;
     transition: background-color 0.1s linear;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: rgba(255, 255, 255, 0.2); /* needed so blur is visible */
     width: 100%;
     &.scrolled {
       background: radial-gradient(#24557e24 1px, transparent 1px),
@@ -32,7 +35,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    min-width: 1000px;
+    width: 100%;
   }
   &_logoContainer {
     height: 50px;

@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faLongArrowAltRight } from "@fortawesome/fontawesome-free-solid";
 import { PhasingGrid } from "components/PhasingGrid/phasingGrid";
+import { createValidImageURL } from "data/Utils";
 
 type State = {
   coreValues: CoreValue[];
@@ -136,7 +137,8 @@ export class Homepage extends React.Component<{}, State> {
             World-class Robotics. Proven Results.
           </h1>
         </div>
-        <YoutubeIFrame src={homeData.video}></YoutubeIFrame>
+        {/* <YoutubeIFrame src={homeData.video}></YoutubeIFrame> */}
+
         <div className="Homepage_content">
           <PillarInfo
             pillars={this.state.coreValues.map((cv) => {
@@ -186,11 +188,6 @@ export class Homepage extends React.Component<{}, State> {
                     }
                   />
                 </p>
-                <img
-                  className="Banner_image"
-                  alt=""
-                  src={"./images/image-asset.jpeg"}
-                />
               </div>
             </div>
           </Banner>

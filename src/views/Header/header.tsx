@@ -68,7 +68,7 @@ export default function Header() {
   const config = CONFIG_DATA;
   return (
     <>
-      <div className="Header_topInfo p-2 bg-whiteColorDark text-blackColor pb-12 pt-5">
+      <div className="Header_topInfo p-2 bg-whiteColorDark text-blackColor pb-5 pt-5">
         <div className="flex justify-center items-center space-x-6">
           <FontAwesomeIcon
             className="Header_contactDetailsIcon"
@@ -102,7 +102,7 @@ export default function Header() {
             className={classNames(
               "Header_content",
               { scrolled, showMenu },
-              "bg-whiteColor text-blackColor items-center p-12"
+              "bg-whiteColor text-blackColor items-center p-12 pb-0 pt-0"
             )}
           >
             <div className={classNames("Header_contentInner", { scrolled })}>

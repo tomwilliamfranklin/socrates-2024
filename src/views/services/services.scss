@@ -27,15 +27,37 @@
     margin-right: auto;
     align-items: flex-start;
     > p {
-      margin-top: 30px;
-      margin-left: 10px;
+      margin-left: 0px;
       color: var(--black);
       width: 100%;
       margin-bottom: 5px;
     }
     > ul {
-      width: 400px;
-      margin-left: 20px;
+      width: 450px;
+      margin-left: 30px;
+      > li {
+        position: relative;
+        font-weight: normal;
+        font-size: 18px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -20px;
+          top: 10px;
+
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+
+          background: linear-gradient(135deg, var(--accent), var(--accent));
+          box-shadow: 0 0 2px var(--accent);
+        }
+      }
+    }
+    > h4 {
+      font-weight: lighter;
+      margin-top: 10px;
     }
   }
 }
