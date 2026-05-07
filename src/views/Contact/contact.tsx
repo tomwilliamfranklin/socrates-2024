@@ -1,4 +1,4 @@
-import React, { FormEvent, FormEventHandler } from "react";
+import React from "react";
 import { ImageBanner } from "components/imageBanner/imageBanner";
 import "./contact.scss";
 import * as CONTACT_INFO from "content/pages/contact.json";
@@ -79,85 +79,150 @@ export class Contact extends React.Component<{}, ContactState> {
             </div>
           </div>
 
-          {/* <div className="Contact_formContainer">
-            <div className="Contact_formWrapper">
+          <div className="w-full py-16 px-4 mt-20 mb-20">
+            <div className="mx-auto max-w-4xl rounded-3xl border border-blackColor bg-white/5 p-8 shadow-2xl shadow-accent backdrop-blur-md">
+              <div className="mb-10">
+                <h2 className="text-4xl font-bold tracking-tight text-white">
+                  Get in touch
+                </h2>
+                <p className="mt-3 text-base text-neutral-400">
+                  Get in touch with Clifton Engineering to find the right
+                  solution for your next project.
+                </p>
+              </div>
+
               <form
-                id="contactForm"
-                className="Contact_contactForm"
-                onSubmit={this.onContactSubmit}
+                className="flex flex-col gap-6"
+                name="contact-form"
+                action="/"
+                method="POST"
+                data-netlify="true"
+                onSubmit={() => {
+                  window.alert("Message submitted, thank you! :)");
+                }}
               >
-                <p className="name-field">
+                <input type="hidden" name="form-name" value="contact-form" />
+
+                {/* Honeypot */}
+                <div className="hidden">
                   <label>
-                    Name <span>*</span>
+                    Fill this out if you're human:
+                    <input title="text" type="text" name="bot-field" />
                   </label>
-                  <input type="text" name="name" id="name" required />
-                </p>
-                <p className="company-field">
-                  <label>Company</label>
-                  <input type="text" name="company" id="company" />
-                </p>
-                <p className="email-field">
-                  <label>
-                    Email <span>*</span>
+                </div>
+
+                {/* Row 1 */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm font-medium text-neutral-300">
+                      Name <span className="text-red-400">*</span>
+                    </label>
+
+                    <input
+                      title="name"
+                      type="text"
+                      name="name"
+                      required
+                      className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                      placeholder="John Smith"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm font-medium text-neutral-300">
+                      Email <span className="text-red-400">*</span>
+                    </label>
+
+                    <input
+                      title="email"
+                      type="email"
+                      name="email"
+                      required
+                      className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2 */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm font-medium text-neutral-300">
+                      Company <span className="text-red-400">*</span>
+                    </label>
+
+                    <input
+                      title="company"
+                      type="text"
+                      name="company"
+                      required
+                      className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                      placeholder="Your company"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm font-medium text-neutral-300">
+                      Country <span className="text-red-400">*</span>
+                    </label>
+
+                    <input
+                      title="country"
+                      type="text"
+                      name="country"
+                      required
+                      className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                      placeholder="United Kingdom"
+                    />
+                  </div>
+                </div>
+
+                {/* Website */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-neutral-300">
+                    Current website{" "}
+                    <span className="text-neutral-500">(optional)</span>
                   </label>
-                  <input type="email" name="email" id="email" required />
-                </p>
-                <p className="phone-field">
-                  <label>Phone</label>
-                  <input type="text" name="phone" id="phone" />
-                </p>
-                <p className="message-field full">
-                  <label>Message</label>
+
+                  <input
+                    title="website"
+                    type="url"
+                    name="website"
+                    className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                    placeholder="https://yourwebsite.com"
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-neutral-300">
+                    Message <span className="text-red-400">*</span>
+                  </label>
+
                   <textarea
+                    className="min-h-[180px] rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition-all placeholder:text-neutral-500 focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                    title="message"
                     name="message"
                     rows={5}
-                    id="message"
                     required
-                  ></textarea>
-                </p>
-                <p className="Contact_requiredField">
-                  Required field <span>*</span>
-                </p>
-                <p className="Contact_submitButton">
-                  <ButtonTile type="submit">Submit</ButtonTile>
-                </p>
+                    placeholder="Tell me about your project..."
+                  />
+                </div>
+
+                {/* Submit */}
+                <div className="flex justify-end pt-4">
+                  <button
+                    type="submit"
+                    className="group inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 text-sm font-semibold text-black transition-all duration-200 hover:scale-[1.02] hover:bg-neutral-200 active:scale-[0.98]"
+                  >
+                    Send Message
+                  </button>
+                </div>
               </form>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     );
   }
-
-  private onContactSubmit: FormEventHandler<HTMLFormElement> = (
-    e: FormEvent
-  ) => {
-    e.preventDefault();
-    //Get value
-    const name = this.getInputVal("name");
-    const company = this.getInputVal("company");
-    const email = this.getInputVal("email");
-    const phone = this.getInputVal("phone");
-    const message = this.getInputVal("message");
-    // Save message
-    this.saveMessage(name, company, email, phone, message);
-
-    const formElement: any = document?.getElementById?.("contactForm");
-    if (formElement != null) {
-      const form: HTMLFormElement = formElement;
-      form.reset?.();
-    }
-  };
-
-  private getInputVal(id: string) {
-    return (document?.getElementById?.(id) as HTMLFormElement).value ?? "";
-  }
-
-  private saveMessage(
-    name: string,
-    company: string,
-    email: string,
-    phone: number,
-    message: string
-  ) {}
 }

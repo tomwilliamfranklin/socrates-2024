@@ -13,5 +13,8 @@
       height: 15px;
       width: 15px;
     }
+    &.alt {
+      filter: brightness(1) invert(0);
+    }
   }
 }

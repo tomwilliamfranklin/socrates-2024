@@ -1,6 +1,6 @@
 .ButtonTile {
   &_root {
-    color: #ffffff;
+    color: var(--whiteColor);
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -23,7 +23,7 @@
 
     &:hover {
       background-color: var(--secondaryAccentLight);
-      color: #fff;
+      color: var(--whiteColor);
     }
 
     &.small {
@@ -39,7 +39,7 @@
       padding: 10px;
       background-color: transparent;
       &:hover {
-        background-color: #fff;
+        background-color: var(--whiteColor);
         color: var(--secondaryAccentDark);
         > .ButtonBehaviour_icon {
           filter: brightness(0) invert(0);

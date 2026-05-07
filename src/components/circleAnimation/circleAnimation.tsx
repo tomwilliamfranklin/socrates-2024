@@ -43,7 +43,7 @@ export default function RotatingCircles({ rings = defaultRings, size = 680 }) {
     <>
       <style>{keyframes}</style>
       <svg
-        className="w-[500px]"
+        className="w-[500px] hidden lg:flex"
         viewBox={`0 0 ${size} ${size}`}
         xmlns="http://www.w3.org/2000/svg"
       >

@@ -179,7 +179,10 @@ export default function Header() {
                 </h5>
               </div>
               <ButtonTile
-                modifiers={classNames("alt", { scrolled, showMenu })}
+                modifiers={classNames("alt self-center ml-20", {
+                  scrolled,
+                  showMenu,
+                })}
                 icon={showMenu ? closeIcon : menuIcon}
                 onSelect={showMobileMenu}
               />

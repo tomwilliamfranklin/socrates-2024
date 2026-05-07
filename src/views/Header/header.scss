@@ -65,7 +65,9 @@
   &_mobileView {
     height: 100vh;
     width: 100%;
-    background-color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background-color: var(--whiteColor); /* needed so blur is visible */
   }
   &_mobileMenu {
     display: flex;
@@ -109,6 +111,7 @@
     &_mobile {
       display: flex;
       justify-content: space-between;
+      padding: 10px;
       h4 {
         color: #fff;
         font-size: 25px;
@@ -121,6 +124,16 @@
       &.showMenu {
         h4 {
           color: var(--secondaryAccentDark);
+        }
+      }
+      > button {
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+        > img {
+          height: 100%;
+          width: 100%;
+          color: var(--blackColor);
         }
       }
     }
@@ -144,6 +157,7 @@
   .Header {
     &_logo {
       height: 20px;
+      display: none;
     }
   }
 }
