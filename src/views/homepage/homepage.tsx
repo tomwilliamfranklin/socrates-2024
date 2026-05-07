@@ -1,7 +1,6 @@
 import React from "react";
 import "./homepage.scss";
 import parseMD from "parse-md";
-import * as HOME_INFO from "content/site/home.json";
 // import * as SITE_SETTINGS from "content/site/config.json";
 import classNames from "classnames";
 import { CaseStudy, CoreValue } from "data/DataTypes";
